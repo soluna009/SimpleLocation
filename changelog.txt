@@ -1,17 +1,82 @@
 1.21.x Changelog
+53.0
+====
+ - 53.0.25 Remove debug code. Closes #10182
+ - 53.0.24 Pass the Holder<Enchantment> to Item.canApplyAtEnchantingTable. Closes #10181
+ - 53.0.23 Fix incorrect patch
+ - 53.0.22 Change vanilla registry order to last-seen. Closes #10179
+ - 53.0.21 Call IUnbakedGeometry.bake from BlockModel Closes #10178
+ - 53.0.20 Cleanup some warnings
+ - 53.0.19 Fix not being able to swim in lava
+ - 53.0.18 Move mdk back to com/example/examplemod to align with what people expect.
+ - 53.0.17 Move MDK example to test sourceset and fix Item/Block registration example. Closes #10139
+ - 53.0.16 Added support for using optional tags on Forge registries
+           Add DeferredRegister.key(name) helper function to make ResourceKey creation easier
+           Fix TagManager not binding tags
+           Fix Unbound Tag Exception when modders register tags during Register events Closes #10154
+ - 53.0.15 Fix empty tag conditional recipe test
+ - 53.0.14 Fixed missed call to getFriction hook in AbstractBoat
+ - 53.0.13 Pass player argument when firing `OnDatapackSyncEvent` (#10170)
+ - 53.0.12 Cleanup lifecycle transitions
+           Fix mod ordering for multi-mod jars
+           Make dependency resolution issues easier to debug/diagnose
+ - 53.0.11 Bump CoreMods to 5.2 (#10156)
+           Full Changelog:
+           https://gist.github.com/Jonathing/c3ad28b2a048ac839a7baba5417ee870
+           The key features are:
+           - ES6 language support
+           - Thoroughly updated ASMAPI, with full documentation
+           - Bug fixes (some optional for backwards-compatibility)
+           - Partial internal code cleanup
+ - 53.0.10 Fix PlayerRenderer#render invoking RenderLivingEvent and not RenderPlayerEvent (#10167)
+ - 53.0.9  Fix Powered Rails acting like Activator Rails due to misaligned patch
+ - 53.0.8  Properly allow normal mods.toml mods to specify the module names and use a full module-info.
+           Make FMLModContainer read and apply Add-Opens and Add-Exports manifest entries from mod files.
+           Forge is now the `net.minecraftforge.forge` module instead of `forge`
+           https://forums.minecraftforge.net/topic/153333-proper-java-module-support-in-forge-mods/
+ - 53.0.7  Fix LootTableLoadEvent not being fired. Closes #10144
+ - 53.0.6  Fix items with use durations of 0 being repeatedly used when use button is held down. Fixed #10150
+ - 53.0.5  Add AT for BlockEntityType constructor. (#10149)
+ - 53.0.4  Add `c:stripped_logs` and `c:stripped_woods` tags (#10146)
+ - 53.0.3  Bump CoreMods and ASM (#10145)
+           CoreMods 5.1.13 changelog: https://gist.github.com/Jonathing/905d142447ecef670526ae27243adbba
+ - 53.0.2  Remove redundant rendering options (#10140)
+ - 53.0.1  Fix pause menu having a black background, reverts PR #10115
+ - 53.0.0  1.21.3 update
+
 52.0
 ====
- - 52.0.9 [1.21.1] Optionally supply `FMLJavaModLoadingContext` as a param to mod constructors (#10074)
-          Also made `FMLJavaModLoadingContext` extend `ModLoadingContext`. See the PR description for example usage.
- - 52.0.8 Fix issues with `QuadBakingVertexConsumer` and Forge's OBJ loader (#10065)
- - 52.0.7 Fire `OnDatapackSyncEvent` when a player joins a server (#10076)
- - 52.0.6 Add a few Method Helpers onto ResourceKey to make getting Data Driven Entries Simpler (#10071)
- - 52.0.5 Fix network channels not initializing during server transfers. Closes #10067
- - 52.0.4 [1.21.1] ModLoading cleanup and optimisations (#10052)
- - 52.0.3 Properly ignore unknown mod files (#10063)
- - 52.0.2 Add level access to Item.TooltipContext if available.
- - 52.0.1 Load mods that declare explicit 1.21 compatibility as 1.21.1 is a minor bugfix.
- - 52.0.0 1.21.1
+ - 52.0.22 Add `c:foods/pie` tag (#10135)
+           Replaces `forge:foods/pie`, which is now deprecated.
+ - 52.0.21 Fix back-compat with legacy `forge:` tags (#10126)
+ - 52.0.20 Implement the de-facto common tags, add many new Forge tags (#9955)
+           https://forums.minecraftforge.net/topic/152815-common-tags-in-forge/
+ - 52.0.19 Patch BlockEntity.java to use getType Method (#10124)
+ - 52.0.18 Fix and cleanup RuntimeDistCleaner
+ - 52.0.17 Sync component registry ids
+           Fix deprecation typo
+           Bump ModLauncher (better stack traces)
+           Set Automatic-Module-Name
+ - 52.0.16 Fix layering of translucent sprites being broken by re-adding blur call Mojang removed (#10115)
+ - 52.0.15 Cleanup length and size checks (#10108)
+ - 52.0.14 Update vulnerable `eclipse` dependency (#10109)
+ - 52.0.13 Add and fire SystemMessageReceivedEvent
+           Replaces ClientChatReceivedEvent.System which was not fired due to Mojang changing ChatType to a registry.
+ - 52.0.12 Fix highlighted item tooltip rendering twice. Closes #10112
+ - 52.0.11 Fix Network hooks not being initialized on GameTestServer (#10081)
+           Add rudimentary custom networking tests.
+ - 52.0.10 Fix inverted logic in TagEmptyCondition (#10069)
+ - 52.0.9  [1.21.1] Optionally supply `FMLJavaModLoadingContext` as a param to mod constructors (#10074)
+           Also made `FMLJavaModLoadingContext` extend `ModLoadingContext`. See the PR description for example usage.
+ - 52.0.8  Fix issues with `QuadBakingVertexConsumer` and Forge's OBJ loader (#10065)
+ - 52.0.7  Fire `OnDatapackSyncEvent` when a player joins a server (#10076)
+ - 52.0.6  Add a few Method Helpers onto ResourceKey to make getting Data Driven Entries Simpler (#10071)
+ - 52.0.5  Fix network channels not initializing during server transfers. Closes #10067
+ - 52.0.4  [1.21.1] ModLoading cleanup and optimisations (#10052)
+ - 52.0.3  Properly ignore unknown mod files (#10063)
+ - 52.0.2  Add level access to Item.TooltipContext if available.
+ - 52.0.1  Load mods that declare explicit 1.21 compatibility as 1.21.1 is a minor bugfix.
+ - 52.0.0  1.21.1
 
 51.0
 ====
