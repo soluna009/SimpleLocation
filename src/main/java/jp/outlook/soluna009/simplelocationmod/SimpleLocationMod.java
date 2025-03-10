@@ -10,9 +10,9 @@ import net.minecraftforge.client.event.CustomizeGuiOverlayEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(SimpleLocationMod.MOD_ID)
 @Mod.EventBusSubscriber(modid = SimpleLocationMod.MOD_ID)
@@ -23,9 +23,9 @@ public class SimpleLocationMod
     public static final String CONFIG_FILE = "jp/outlook/soluna009/simpleLocation-client.toml";
     public static final InterfaceSimpleLocation simpleLocation = new LogicSimpleLocation(Minecraft.getInstance());
 
-    public SimpleLocationMod()
+    public SimpleLocationMod(FMLJavaModLoadingContext context)
     {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.SPEC, CONFIG_FILE);
+        context.registerConfig(ModConfig.Type.CLIENT, Config.SPEC, CONFIG_FILE);
     }
 
     @SubscribeEvent
