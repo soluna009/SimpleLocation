@@ -1,0 +1,7 @@
+{
+  "jp.outlook.soluna009.simple_location.categories.misc" : "簡易座標表示",
+  "jp.outlook.soluna009.simple_location.key.show_location" : "座標表示",
+  "jp.outlook.soluna009.simple_location.key.change_location": "表示場所変更",
+  "jp.outlook.soluna009.simple_location.key.show_center": "中央表示",
+  "jp.outlook.soluna009.simple_location.key.show_head_info" : "頭の上下方向表示"
+}
