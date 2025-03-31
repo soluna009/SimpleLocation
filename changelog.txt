@@ -1,6 +1,19 @@
 1.21.x Changelog
+55.0
+====
+ - 55.0.3 Fix bundles causing crash upon inserting item. Closes #10509
+ - 55.0.2 Add DeferredRegistryData to help with generating data driven registry entries.
+          Revive GameTest system and make all but one Forge Test mod pass.
+ - 55.0.1 Fix Mod List Screen's render layout and scroll bars.
+ - 55.0.0 Minecraft 1.21.5
+          Co-authored-by: Ven <tudurap.com@gmail.com>
+          Co-authored-by: Jonathing <me@jonathing.me>
+
 54.1
 ====
+ - 54.1.3 Add Pumpkin Block and Item Tags (#10482)
+ - 54.1.2 Add '#forge:chorus_additionally_grows_on' tag for similar mechanics to '#minecraft:azalea_grows_on' but for chorus (#10459)
+ - 54.1.1 Fix Hanging Pale Moss not dropping with modded shears (#10414)
  - 54.1.0 1.21.4 RB 1
           https://forums.minecraftforge.net/topic/154394-forge-541-minecraft-1214/
 
@@ -21,12 +34,12 @@
  - 54.0.28 Gate client test mods behind clientSideOnly (#10390)
  - 54.0.27 Fix issue with superclass event listeners by updating EventBus (#10384)
  - 54.0.26 Bump dependencies, most notably EventBus (#10370)
-           - CoreMods 5.2.4 -> 5.2.6
-           - EventBus 6.2.15 -> 6.2.26
-               - Reduced memory usage
-               - Further performance improvements
-               - Fixed EventBus#39, unregistered listeners are now immediately reclaimable by the GC
-           - Apache MavenArtifact 3.8.5 -> 3.8.8
+           - CoreMods 5.2.4 -> 5.2.6
+           - EventBus 6.2.15 -> 6.2.26
+               - Reduced memory usage
+               - Further performance improvements
+               - Fixed EventBus#39, unregistered listeners are now immediately reclaimable by the GC
+           - Apache MavenArtifact 3.8.5 -> 3.8.8
            - NightConfig 3.7.3 -> 3.7.4
  - 54.0.25 Fix shield disabling being completely ignored (#10316)
  - 54.0.24 Update Gradle to 8.12.1
@@ -41,11 +54,11 @@
            Add VillagerType#registerBiomeType
  - 54.0.17 Fix render_type in block models not being used. Fixes #10294
  - 54.0.16 Bump dependencies (#10274)
-           - EventBus 6.2.8 -> 6.2.15
-           - Bootstrap 2.1.7 -> 2.1.8
-           - SecureModules 2.2.20 -> 2.2.21
-           - AccessTransformers 8.2.0 -> 8.2.1
-           - ModLauncher 10.2.2 -> 10.2.3
+           - EventBus 6.2.8 -> 6.2.15
+           - Bootstrap 2.1.7 -> 2.1.8
+           - SecureModules 2.2.20 -> 2.2.21
+           - AccessTransformers 8.2.0 -> 8.2.1
+           - ModLauncher 10.2.2 -> 10.2.3
            These bumps include further clean-up and optimisations.
  - 54.0.15 Simplify Title Screen Brandings (#10287)
  - 54.0.14 Clean and fix Forge's internal coremods, fixes finalizeSpawn hook. (#10271)
@@ -58,7 +71,7 @@
  - 54.0.8  Skip Forge classes in the RuntimeEnumExtender transformer (#10197)
            Mod classes are still transformed as usual
  - 54.0.7  Add hooks for using Vanilla's new Client data generator (#10206)
-           Add new hook for custom block models that do not have real blocks backing them
+           Add new hook for custom block models that do not have real blocks backing them
            Some workspace cleanup fixing log4j annotation processor
  - 54.0.6  Deprecate `@ObjectHolder`, add a couple of fast-paths (#10195)
  - 54.0.5  Bump Bootstrap which has a slight performance boost during dev time.
@@ -91,12 +104,12 @@
            Fix mod ordering for multi-mod jars
            Make dependency resolution issues easier to debug/diagnose
  - 53.0.11 Bump CoreMods to 5.2 (#10156)
-           Full Changelog:
-           https://gist.github.com/Jonathing/c3ad28b2a048ac839a7baba5417ee870
-           The key features are:
-           - ES6 language support
-           - Thoroughly updated ASMAPI, with full documentation
-           - Bug fixes (some optional for backwards-compatibility)
+           Full Changelog:
+           https://gist.github.com/Jonathing/c3ad28b2a048ac839a7baba5417ee870
+           The key features are:
+           - ES6 language support
+           - Thoroughly updated ASMAPI, with full documentation
+           - Bug fixes (some optional for backwards-compatibility)
            - Partial internal code cleanup
  - 53.0.10 Fix PlayerRenderer#render invoking RenderLivingEvent and not RenderPlayerEvent (#10167)
  - 53.0.9  Fix Powered Rails acting like Activator Rails due to misaligned patch
@@ -218,8 +231,8 @@
  - 50.0.22 Add GatherComponentsEvent (#9944)
  - 50.0.21 Fix powered rails not propogating correctly.
  - 50.0.20 Remove ICustomPacket and add PayloadChannel. (#9972)
-           New PayloadChannel that uses the vanilla payload Type for packet distinction
-           Implement the minecraft:register/unregister channels using the new PayloadChannel
+           New PayloadChannel that uses the vanilla payload Type for packet distinction
+           Implement the minecraft:register/unregister channels using the new PayloadChannel
            New generic channel builder function allowing people to implement channels however they want.
  - 50.0.19 Implement entity aware armor model and texture hooks. Closes #9960
  - 50.0.18 Fix finalizeSpawn's return value not being used correctly. Closes #9964
@@ -232,11 +245,11 @@
  - 50.0.11 Some patch cleanup (#9951)
  - 50.0.10 Filter paths discovered by ServiceProvider in ClasspathLocator. Closes #9899
  - 50.0.9  Update SimpleChannel to make StreamCodecs easier (#9959)
-           Rework networking so that RegistryFriendlyByteBuf is useable for modders
-           Simple support for StreamCodec in SimpleChannel
-           Codecify all Forge packets
-           Make simpler builder pattern for SimpleChannel. Will eventually deprecate the old MessageBuilder as it's verbose and poorly written.
-           Co-authored-by: MrCrayfish <4958241+MrCrayfish@users.noreply.github.com>
+           Rework networking so that RegistryFriendlyByteBuf is useable for modders
+           Simple support for StreamCodec in SimpleChannel
+           Codecify all Forge packets
+           Make simpler builder pattern for SimpleChannel. Will eventually deprecate the old MessageBuilder as it's verbose and poorly written.
+           Co-authored-by: MrCrayfish <4958241+MrCrayfish@users.noreply.github.com>
            Co-authored-by: Paint_Ninja <PaintNinja@users.noreply.github.com>
  - 50.0.8  Fix shields not working correctly. Fixes #9966
  - 50.0.7  Fix RenderTarget stencil patch location. Fixes #9965
